@@ -1,0 +1,116 @@
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2020-12-10T16:18:31.643+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs;   -----------------------------------
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use hr      -----------------------------------
+switched to db hr
+> db.createCollection("emp");  -----------------------
+{ "ok" : 1 }
+> show dbs    --------------------
+admin   0.000GB
+config  0.000GB
+hr      0.000GB
+local   0.000GB
+> show collections   ----------------------
+emp
+> db.emp.insert({name:"ram",address:"bng",age:30});   -----------------
+WriteResult({ "nInserted" : 1 })
+> db.emp.find();   ---------------------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "ram", "address" : "bng", "age" : 30 }
+> db.emp.insert([{name:"ravi",address:"mys",age:25},{name:"sachin",address:"chn",age:20}]);   --------------
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.emp.find();   ----------------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "ram", "address" : "bng", "age" : 30 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee27ff"), "name" : "ravi", "address" : "mys", "age" : 25 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee2800"), "name" : "sachin", "address" : "chn", "age" : 20 }
+> db.emp.find({"name":"ram"});  ------------------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "ram", "address" : "bng", "age" : 30 }
+> db.emp.find({age:{$gt:20}});  -------------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "ram", "address" : "bng", "age" : 30 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee27ff"), "name" : "ravi", "address" : "mys", "age" : 25 }
+> db.emp.find({address:{$in:["bng","mys"]}});  ------------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "ram", "address" : "bng", "age" : 30 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee27ff"), "name" : "ravi", "address" : "mys", "age" : 25 }
+> db.emp.update({name:"ram"},{$set:{name:"satish"}});  ----------
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.emp.find();   -------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "satish", "address" : "bng", "age" : 30 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee27ff"), "name" : "ravi", "address" : "mys", "age" : 25 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee2800"), "name" : "sachin", "address" : "chn", "age" : 20 }
+> db.ep.remove({name:"ram"});  ------
+WriteResult({ "nRemoved" : 0 })
+> db.emp.find();     --------
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "satish", "address" : "bng", "age" : 30 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee27ff"), "name" : "ravi", "address" : "mys", "age" : 25 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee2800"), "name" : "sachin", "address" : "chn", "age" : 20 }
+> db.emp.find({}).sort({"name":-1});   -----
+{ "_id" : ObjectId("5fd2048d8c11f09b1dee27fe"), "name" : "satish", "address" : "bng", "age" : 30 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee2800"), "name" : "sachin", "address" : "chn", "age" : 20 }
+{ "_id" : ObjectId("5fd205598c11f09b1dee27ff"), "name" : "ravi", "address" : "mys", "age" : 25 }
+>
+------------------------------------------------------------------------
+Differences in Terminology
+There are differences based on terminology between MongoDB and MySQL.
+ MySql    --- Table , Row , Column , Joins
+
+ MongoDB  ---  Collection , Document , Field , Embedded documents,linking.
+
+CRUD - create read update delete
+mongo - insert find update remove
+sort
+where condition in find()
+Data Representation
+The difference between the way data is represented and stored in both the databases is quite different.
+MongoDB stores data in form of JSON-like documents and MySQL stores data in form of rows of table as mentioned earlier.
+Example: To show how data is stored and represented in MongoDB and MySQL.
+data representation in mongodb vs mysql gfg
+Data Representation
+document in mongodb
+{
+name:"perry",
+age:20,
+contact:{
+mobile:"898989898",
+address:""
+}
+
+Record in Mysql
+name  age contact address
+perry  20  9999999  hdhss
+
+----In MongoDB, each individual records are stored as ‘documents’.	
+In MySQL, each individual records are stored as ‘rows’ in a table.
+
+----
+MongoDB is an open-source database developed by MongoDB, Inc. MongoDB stores data in JSON-like documents that can vary in structure. It is a popular NoSQL database.	
+MySQL is a popular open-source relational database management system (RDBMS) that is developed, distributed and supported by Oracle Corporation.

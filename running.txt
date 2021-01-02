@@ -1,0 +1,48 @@
+3 ways of configuration in spring
+
+
+
+------------
+@autowired - automatically it get initialized
+mvn archetype :generate
+1703
+quickstart
+----
+groupid:com.stackroute
+artifactId:understandingamven
+version:1.0
+pack
+
+----
+in angular - build name is dist
+-----------
+mvn clean package - DskipTests  -->excxeuting life cycle
+
+build
+target folder will appear
+-----------
+maven life cycle
+------------
+plugins
+-------------
+pom.xml -like package.json 
+xsd --by w3c 
+artifactid = name sould be same
+maven.compiler.source =11
+dependency - external libraries or (address of junit )
+adding jdbc - maven repository
+-------------
+1.scope
+2.lifecycle vs goals in maven
+3.plugin tmw 
+-----------
+ in angular - npm (adds dependencies)
+------
+cmd to install maven
+maven.apche
+-------------
+lc has phases and phases has goals.
+----------------
+factory pattern
+-----mvp project (capstone project)
+infront of stake holders

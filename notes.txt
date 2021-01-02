@@ -1,0 +1,358 @@
+git npm install
+ng serve --open
+ng serve --port 4203..
+ng g c 
+ng g s 
+ng g g
+ng g d
+ng g p
+npm install @angular/material @angular/cdk @angular/animations --save
+npm run serve:3000
+npm run start:4200
+npm install -g @angular/cli
+ng new project-name
+cd project-name
+ng serve
+http://localhost:4200/
+ng test-component testing
+ng test-service testing
+ng e2e
+----
+ctrl k +ctrl w -close all
+alt+shift+f -all alignemnt
+----
+cd to project
+git init
+git add .
+git commit -m "first"
+git remote rm origin
+git remote add origin url(of repo)
+git push origin master--refresh
+---------
+git push -u "https://gitlab-legato.stackroute.in/shravika413/java-assignment.git" master
+----------
+dir--cd <pn>--code .
+---------
+cd src -> cd app ->json-server db.json
+json-server server/db.json
+copy resources
+-----
+tsc --module commonjs test2.ts
+tsc first.ts
+node first.js
+-----
+cd ....
+git clone url
+cd to url
+code .
+git commit ?
+git add .
+git status ?
+git commit -m "#"
+git push -u origin master
+git status
+git add .
+git commit -m "removed"
+git push -u origin master
+----------------
+java -version
+"1.8.0_261"
+mvn -version
+Apache Maven 3.6.3
+-----------------
+practice merging
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~
+$ git clone https://gitlab-legato.stackroute.in/shravika413/test.git
+Cloning into 'test'...
+warning: You appear to have cloned an empty repository.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~
+$ cd test
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (master)
+$ touch readme.md
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (master)
+$ git add readme.md
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (master)
+$ git commit -m "add readme"
+[master (root-commit) 6dd2a4a] add readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.md
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (master)
+$ git checkout stage
+error: pathspec 'stage' did not match any file(s) known to git
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (master)
+$ git branch stage
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (master)
+$ git checkout stage
+Switched to branch 'stage'
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (stage)
+$ git branch login
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (stage)
+$ git checkout login
+Switched to branch 'login'
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (login)
+$ touch readme.md
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (login)
+$ git commit -m "add readme"
+On branch login
+nothing to commit, working tree clean
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (login)
+$ git push -u origin login
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 207 bytes | 207.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://gitlab-legato.stackroute.in/shravika413/test.git
+ * [new branch]      login -> login
+Branch 'login' set up to track remote branch 'login' from 'origin'.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/test (login)
+$
+-----------------------------------------------------
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipher (master)
+$ git branch
+* master
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipher (master)
+$ cd ..
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular
+$ git clone -b sprint-blue --single-branch https://gitlab-legato.stackroute.in/shravika413/gipherapp.git
+Cloning into 'gipherapp'...
+remote: Enumerating objects: 79, done.
+remote: Counting objects: 100% (79/79), done.
+remote: Compressing objects: 100% (59/59), done.
+remote: Total 79 (delta 9), reused 78 (delta 9), pack-reused 0
+Unpacking objects: 100% (79/79), 203.86 KiB | 314.00 KiB/s, done.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular
+$
+
+------------------------------------
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git branch
+* sprint-blue
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ ls
+gipher-backend/  gipher-client/
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ cd gipher-
+gipher-backend/ gipher-client/
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ cd gipher-client/
+.browserslistrc     package.json        tsconfig.json
+.editorconfig       package-lock.json   tsconfig.spec.json
+angular.json        README.md           tslint.json
+e2e/                src/
+karma.conf.js       tsconfig.app.json
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ cd gipher-client/src/
+app/          environments/ index.html    polyfills.ts  test.ts
+assets/       favicon.ico   main.ts       styles.css
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ cd gipher-client/src/app/
+app.component.css       app.component.ts        gipher.service.ts
+app.component.html      app.module.ts
+app.component.spec.ts   gipher.service.spec.ts
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git status
+On branch sprint-blue
+Your branch is up to date with 'origin/sprint-blue'.
+
+nothing to commit, working tree clean
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git status
+On branch sprint-blue
+Your branch is up to date with 'origin/sprint-blue'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   gipher-client/src/app/app.component.css
+        modified:   gipher-client/src/app/app.component.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git add .
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git commit -m "first commit"
+[sprint-blue 4159cdf] first commit
+ 2 files changed, 28 insertions(+), 25 deletions(-)
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git push -u origin sprint-blue
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.03 KiB | 263.00 KiB/s, done.
+Total 7 (delta 6), reused 0 (delta 0), pack-reused 0
+remote:
+remote: To create a merge request for sprint-blue, visit:
+remote:   https://gitlab-legato.stackroute.in/shravika413/gipherapp/-/merge_requests/new?merge_request%5Bsource_branch%5D=sprint-blue
+remote:
+To https://gitlab-legato.stackroute.in/shravika413/gipherapp.git
+   03b05d1..4159cdf  sprint-blue -> sprint-blue
+Branch 'sprint-blue' set up to track remote branch 'sprint-blue' from 'origin'.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$
+-------------------------------------------------------
+-sprin all mvc
+Microsoft Windows [Version 10.0.19041.630]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\charan\Desktop\shravika-springmvc>git init
+Initialized empty Git repository in C:/Users/charan/Desktop/shravika-springmvc/.git/
+
+C:\Users\charan\Desktop\shravika-springmvc>git remote add origin https://gitlab-legato.stackroute.in/shravika413/springmvcsession.git
+
+C:\Users\charan\Desktop\shravika-springmvc>git add .
+warning: LF will be replaced by CRLF in SpringMVC/src/main/webapp/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in SpringMVC/src/main/webapp/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in SpringMVC1/src/main/webapp/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in SpringMVC1/src/main/webapp/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in SpringMVC2/src/main/webapp/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in SpringMVC2/src/main/webapp/index.jsp.
+The file will have its original line endings in your working directory
+
+C:\Users\charan\Desktop\shravika-springmvc>git commit -m "initial"
+[master (root-commit) 5644f49] initial
+ 79 files changed, 1429 insertions(+)
+ create mode 100644 SpringMVC/.classpath
+ create mode 100644 SpringMVC/.project
+ create mode 100644 SpringMVC/.settings/.jsdtscope
+ create mode 100644 SpringMVC/.settings/org.eclipse.core.resources.prefs
+ create mode 100644 SpringMVC/.settings/org.eclipse.jdt.apt.core.prefs
+ create mode 100644 SpringMVC/.settings/org.eclipse.jdt.core.prefs
+ create mode 100644 SpringMVC/.settings/org.eclipse.m2e.core.prefs
+ create mode 100644 SpringMVC/.settings/org.eclipse.wst.common.component
+ create mode 100644 SpringMVC/.settings/org.eclipse.wst.common.project.facet.core.xml
+ create mode 100644 SpringMVC/.settings/org.eclipse.wst.jsdt.ui.superType.container
+ create mode 100644 SpringMVC/.settings/org.eclipse.wst.jsdt.ui.superType.name
+ create mode 100644 SpringMVC/.settings/org.eclipse.wst.validation.prefs
+ create mode 100644 SpringMVC/pom.xml
+ create mode 100644 SpringMVC/src/main/java/com/legato/TestController.java
+ create mode 100644 SpringMVC/src/main/webapp/WEB-INF/dispatcher-servlet.xml
+ create mode 100644 SpringMVC/src/main/webapp/WEB-INF/views/first.jsp
+ create mode 100644 SpringMVC/src/main/webapp/WEB-INF/views/second.jsp
+ create mode 100644 SpringMVC/src/main/webapp/WEB-INF/web.xml
+ create mode 100644 SpringMVC/src/main/webapp/index.jsp
+ create mode 100644 SpringMVC/target/classes/com/legato/TestController.class
+ create mode 100644 SpringMVC/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+ create mode 100644 SpringMVC/target/m2e-wtp/web-resources/META-INF/maven/com.legato/SpringMVC/pom.properties
+ create mode 100644 SpringMVC/target/m2e-wtp/web-resources/META-INF/maven/com.legato/SpringMVC/pom.xml
+ create mode 100644 SpringMVC1/.classpath
+ create mode 100644 SpringMVC1/.project
+ create mode 100644 SpringMVC1/.settings/.jsdtscope
+ create mode 100644 SpringMVC1/.settings/org.eclipse.core.resources.prefs
+ create mode 100644 SpringMVC1/.settings/org.eclipse.jdt.apt.core.prefs
+ create mode 100644 SpringMVC1/.settings/org.eclipse.jdt.core.prefs
+ create mode 100644 SpringMVC1/.settings/org.eclipse.m2e.core.prefs
+ create mode 100644 SpringMVC1/.settings/org.eclipse.wst.common.component
+ create mode 100644 SpringMVC1/.settings/org.eclipse.wst.common.project.facet.core.xml
+ create mode 100644 SpringMVC1/.settings/org.eclipse.wst.jsdt.ui.superType.container
+ create mode 100644 SpringMVC1/.settings/org.eclipse.wst.jsdt.ui.superType.name
+ create mode 100644 SpringMVC1/.settings/org.eclipse.wst.validation.prefs
+ create mode 100644 SpringMVC1/pom.xml
+ create mode 100644 SpringMVC1/src/main/java/com/legato/Emp.java
+ create mode 100644 SpringMVC1/src/main/java/com/legato/EmpController.java
+ create mode 100644 SpringMVC1/src/main/java/com/legato/EmpDAO.java
+ create mode 100644 SpringMVC1/src/main/resource/spring.xml
+ create mode 100644 SpringMVC1/src/main/webapp/WEB-INF/dispatcher-servlet.xml
+ create mode 100644 SpringMVC1/src/main/webapp/WEB-INF/views/emp.jsp
+ create mode 100644 SpringMVC1/src/main/webapp/WEB-INF/web.xml
+ create mode 100644 SpringMVC1/src/main/webapp/index.jsp
+ create mode 100644 SpringMVC1/target/classes/com/legato/Emp.class
+ create mode 100644 SpringMVC1/target/classes/com/legato/EmpController.class
+ create mode 100644 SpringMVC1/target/classes/com/legato/EmpDAO.class
+ create mode 100644 SpringMVC1/target/classes/spring.xml
+ create mode 100644 SpringMVC1/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+ create mode 100644 SpringMVC1/target/m2e-wtp/web-resources/META-INF/maven/com.legato/SpringMVC1/pom.properties
+ create mode 100644 SpringMVC1/target/m2e-wtp/web-resources/META-INF/maven/com.legato/SpringMVC1/pom.xml
+ create mode 100644 SpringMVC2/.classpath
+ create mode 100644 SpringMVC2/.project
+ create mode 100644 SpringMVC2/.settings/.jsdtscope
+ create mode 100644 SpringMVC2/.settings/org.eclipse.core.resources.prefs
+ create mode 100644 SpringMVC2/.settings/org.eclipse.jdt.apt.core.prefs
+ create mode 100644 SpringMVC2/.settings/org.eclipse.jdt.core.prefs
+ create mode 100644 SpringMVC2/.settings/org.eclipse.m2e.core.prefs
+ create mode 100644 SpringMVC2/.settings/org.eclipse.wst.common.component
+ create mode 100644 SpringMVC2/.settings/org.eclipse.wst.common.project.facet.core.xml
+ create mode 100644 SpringMVC2/.settings/org.eclipse.wst.jsdt.ui.superType.container
+ create mode 100644 SpringMVC2/.settings/org.eclipse.wst.jsdt.ui.superType.name
+ create mode 100644 SpringMVC2/.settings/org.eclipse.wst.validation.prefs
+ create mode 100644 SpringMVC2/pom.xml
+ create mode 100644 SpringMVC2/src/main/java/com/legato/Cus.java
+ create mode 100644 SpringMVC2/src/main/java/com/legato/CusDAO.java
+ create mode 100644 SpringMVC2/src/main/java/com/legato/CustomerController.java
+ create mode 100644 SpringMVC2/src/main/resource/spring.xml
+ create mode 100644 SpringMVC2/src/main/webapp/WEB-INF/dispatcher-servlet.xml
+ create mode 100644 SpringMVC2/src/main/webapp/WEB-INF/views/cus.jsp
+ create mode 100644 SpringMVC2/src/main/webapp/WEB-INF/web.xml
+ create mode 100644 SpringMVC2/src/main/webapp/index.jsp
+ create mode 100644 SpringMVC2/target/classes/com/legato/Cus.class
+ create mode 100644 SpringMVC2/target/classes/com/legato/CusDAO.class
+ create mode 100644 SpringMVC2/target/classes/com/legato/CustomerController.class
+ create mode 100644 SpringMVC2/target/classes/spring.xml
+ create mode 100644 SpringMVC2/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+ create mode 100644 SpringMVC2/target/m2e-wtp/web-resources/META-INF/maven/com.legato/SpringMVC2/pom.properties
+ create mode 100644 SpringMVC2/target/m2e-wtp/web-resources/META-INF/maven/com.legato/SpringMVC2/pom.xml
+
+C:\Users\charan\Desktop\shravika-springmvc>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\charan\Desktop\shravika-springmvc>dir
+ Volume in drive C is OS
+ Volume Serial Number is 2A2F-B0E0
+
+ Directory of C:\Users\charan\Desktop\shravika-springmvc
+
+30-11-2020  18:19    <DIR>          .
+30-11-2020  18:19    <DIR>          ..
+30-11-2020  18:16    <DIR>          SpringMVC
+30-11-2020  18:16    <DIR>          SpringMVC1
+30-11-2020  18:16    <DIR>          SpringMVC2
+               0 File(s)              0 bytes
+               5 Dir(s)  34,883,551,232 bytes free
+
+C:\Users\charan\Desktop\shravika-springmvc>git push -u origin master
+Enumerating objects: 118, done.
+Counting objects: 100% (118/118), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (84/84), done.
+Writing objects: 100% (118/118), 16.60 KiB | 680.00 KiB/s, done.
+Total 118 (delta 23), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (23/23), done.
+To https://gitlab-legato.stackroute.in/shravika413/springmvcsession.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Desktop\shravika-springmvc>

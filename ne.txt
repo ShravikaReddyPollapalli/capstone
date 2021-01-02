@@ -1,0 +1,1184 @@
+git clone -b login --single-branch https://github.com/Itseez/opencv.git12:29
+git push -u origin login12:30
+git push -u origin rishi12:31
+git merge source_branch dest_branch
+	
+-----------------------------------------
+controller - handle request | give out response |authenticate user |entry point of api
+
+service layer - checkuser | checkCreds | generate token |Business Logic
+dao layer - 
+
+------------------------------------------
+
+	
+
+------------------------------------------------------------------------
+ 
+
+User Roles
+Roles to be that application will cater to is as follows. 
+
+Client/Customer 
+Application Admin
+Content Approvers
+Publishers
+
+Client/Customer
+
+	Login
+Customers can login to the application. By giving username and password.
+The application will allow the user to login via Social Handles
+Specifically by Facebook and Google Auth Sign In .
+
+Sign-Up
+Customers can sign up via the Facebook, Google or by registration form given in the application. 
+The application will only store the email address for any given users. The access-tokes provided by OAuth mechanisms will be immediately destroyed to avoid and GDPR violations.
+ And the application will not responsible for the leak in data. 
+The user information will be stored in mysql database.
+
+	Dashboard View
+The user will be routed to dashboard after logging in. 
+On landing on to the dashboard, user will be able to search for and gifs or stickers in the system. If the gif or sticker he/she searched for is not available.
+The user can be able to access the following sections like favorite's,recommendation and all gif's.
+To make a recommendation to add a particular gif in the system 
+
+	
+
+
+EDit view 
+can view his/her profile and also should be able to edit his/her profile.
+
+
+
+	Details View
+By Selecting any particular gif from search user will redirected to Details view of the gif,only if the user is logged in. 
+On details view user will be able to see the meta objects about the gif's such as comments  . 
+User should be able to leave a comment on the details view about the gif.
+
+-----------------------------------------------------------------------------------------------------------
+	
+	
+
+
+
+
+ <!-- for search  bar like  in zomato  -->
+<!-- <div class="container1">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="name" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button (click)="onSearch()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+</div>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Gipher</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Trending <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<div class ="container">
+  <div *ngFor = "let item of gifs.data  | paginate: { id: 'listing_pagination',
+  itemsPerPage: 9,
+  currentPage: page,
+  totalItems: totalRecords }">
+   
+  <mat-card class="example-card">
+   
+    <img mat-card-image  height="300px" src={{item.images.original.url}}>
+    
+    <mat-card-actions>
+      <button mat-button>Recommend</button> 
+      <button mat-button>favorite</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+  </div> 
+  
+
+  <div>
+   <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+
+
+
+
+
+----------------------------------------------------------------------------------
+
+to hold the info of a particular class - row mapper
+---CREATE DATABASE databasename;
+--------------------------------------------------------
+ 
+<!-- <div class="container1">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="name" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button (click)="onSearch()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+</div>
+</div> -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+  <a class="navbar-brand" href="#">Gipher</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Trending <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> 
+       <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> 
+     </ul> 
+  
+
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2"  [(ngModel)]="name" type="search" placeholder="Search" aria-label="Search">
+      <button (click)="onSearch()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div> 
+</nav>
+
+
+ <div class ="container">
+  <div *ngFor = "let item of gifs  | paginate: { id: 'listing_pagination',
+  itemsPerPage: 9,
+  currentPage: page,
+  totalItems: totalRecords }">
+  <div class="card" style="width: 18rem;">
+    <img src="{{item.images.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <a [routerLink] = ""   style="margin-right: 16px" class="btn btn-primary">Recommend</a>
+        <a [routerLink] = ""   style="margin-right: 16px" class="btn btn-primary">Favorite </a>
+    </div> 
+   <mat-card class="example-card">
+    <img mat-card-image src={{item.images.url}}> 
+     <mat-card-actions>
+      <button mat-button>Recommend</button> 
+      <button mat-button>favorite</button>
+    </mat-card-actions> 
+  </mat-card> 
+  <!-- <a [routerLink] = "" class="btn btn-primary">details</a> -->
+   </div>
+  </div> 
+</div>
+
+  <div>
+   <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div> -->
+ 
+---
+   <!-- for search  bar like  in zomato  -->
+<!-- <div class="container1">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="name" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button (click)="onSearch()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+</div>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Gipher</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Trending <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li> -->
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<div class ="container">
+  <div *ngFor = "let item of gifs.data  | paginate: { id: 'listing_pagination',
+  itemsPerPage: 9,
+  currentPage: page,
+  totalItems: totalRecords }">
+   
+  <mat-card class="example-card">
+   
+    <img mat-card-image  height="300px" src={{item.images.original.url}}>
+    
+    <mat-card-actions>
+      <button mat-button>Recommend</button> 
+      <button mat-button>favorite</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+  </div> 
+  
+
+  <div>
+   <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+
+
+-----------------------------------------------------------------
+Microsoft Windows [Version 10.0.19041.630]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-1-assignment>git init
+Reinitialized existing Git repository in C:/Users/charan/Desktop/Angular/angular-keep-level-1-assignment/.git/
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-1-assignment>git remote add origin https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-1-assignment.git
+fatal: remote origin already exists.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-1-assignment>git commit -m "initial"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   debug.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-1-assignment>git add .
+warning: LF will be replaced by CRLF in debug.log.
+The file will have its original line endings in your working directory
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-1-assignment>git push -u origin master
+Enumerating objects: 30, done.
+Counting objects: 100% (30/30), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (17/17), 109.26 KiB | 4.97 MiB/s, done.
+Total 17 (delta 4), reused 0 (delta 0), pack-reused 0
+To https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-1-assignment.git
+   005c013..b22b9d1  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-1-assignment>
+
+-------------------------------------------------------------------------------------
+keeplevel 2:
+Microsoft Windows [Version 10.0.19041.630]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\charan\Desktop\Angular>git clone https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-2-assignment.git
+Cloning into 'angular-keep-level-2-assignment'...
+remote: Enumerating objects: 76, done.
+remote: Total 76 (delta 0), reused 0 (delta 0), pack-reused 76
+Unpacking objects: 100% (76/76), 24.18 KiB | 74.00 KiB/s, done.
+
+C:\Users\charan\Desktop\Angular>cd angular-keep-level-2-assignment
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>code .
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>npm install
+npm WARN deprecated @angular/http@5.2.11: Package no longer supported. Use @angular/common instead, see https://angular.io/guide/deprecations#angularhttp
+npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated chokidar@1.7.0: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated extract-text-webpack-plugin@3.0.2: Deprecated. Please use https://github.com/webpack-contrib/mini-css-extract-plugin
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated request@2.81.0: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated har-validator@4.2.1: this library is no longer supported
+npm WARN deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+npm WARN deprecated json3@3.3.2: Please use the native JSON object instead of JSON 3
+npm WARN deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+npm WARN deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+
+> node-sass@4.14.1 install C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\charan\AppData\Roaming\npm-cache\node-sass\4.14.1\win32-x64-72_binding.node
+
+> core-js@2.6.12 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+> https://opencollective.com/core-js
+> https://www.patreon.com/zloirock
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> ejs@2.7.4 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment\node_modules\ejs
+> node ./postinstall.js
+
+Thank you for installing EJS: built with the Jake JavaScript build tool (https://jakejs.com/)
+
+
+> uglifyjs-webpack-plugin@0.4.6 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment\node_modules\webpack\node_modules\uglifyjs-webpack-plugin
+> node lib/post_install.js
+
+
+> node-sass@4.14.1 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment\node_modules\node-sass\vendor\win32-x64-72\binding.node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN notsup Unsupported engine for karma@1.7.1: wanted: {"node":"0.10 || 0.12 || 4 || 5 || 6 || 7 || 8"} (current: {"node":"12.18.4","npm":"6.14.6"})
+npm WARN notsup Not compatible with your version of node/npm: karma@1.7.1
+npm WARN notsup Unsupported engine for karma-cli@1.0.1: wanted: {"node":"0.10 || 0.12 || 4 || 5 || 6"} (current: {"node":"12.18.4","npm":"6.14.6"})
+npm WARN notsup Not compatible with your version of node/npm: karma-cli@1.0.1
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules\watchpack-chokidar2\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\webpack-dev-server\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\@angular\compiler-cli\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\karma\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN @angular-devkit/schematics@0.0.52 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+npm WARN @schematics/angular@0.1.17 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+
+added 1710 packages from 1232 contributors and audited 1716 packages in 63.326s
+
+35 packages are looking for funding
+  run `npm fund` for details
+
+found 48 vulnerabilities (22 low, 9 moderate, 17 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>ng serve -o
+Your global Angular CLI version (10.2.0) is greater than your local
+version (1.6.0). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+ 12% building modules 18/18 modules 0 activewebpack: wait until bundle finished: /
+Date: 2020-11-28T10:31:50.412Z
+Hash: 6f42614b41c500ef5cd9
+Time: 10667ms
+chunk {inline} inline.bundle.js (inline) 5.79 kB [entry] [rendered]
+chunk {main} main.bundle.js (main) 89.8 kB [initial] [rendered]
+chunk {polyfills} polyfills.bundle.js (polyfills) 608 kB [initial] [rendered]
+chunk {styles} styles.bundle.js (styles) 150 kB [initial] [rendered]
+chunk {vendor} vendor.bundle.js (vendor) 15.5 MB [initial] [rendered]
+
+webpack: Compiled successfully.
+^CTerminate batch job (Y/N)? n
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>ng test
+Your global Angular CLI version (10.2.0) is greater than your local
+version (1.6.0). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+ 10% building modules 1/1 modules 0 active28 11 2020 16:02:11.806:WARN [karma]: No captured browser, open http://localhost:9876/
+28 11 2020 16:02:11.809:INFO [karma]: Karma v1.7.1 server started at http://0.0.0.0:9876/
+28 11 2020 16:02:11.809:INFO [launcher]: Launching browser Chrome with unlimited concurrency
+28 11 2020 16:02:11.825:INFO [launcher]: Starting browser Chrome
+28 11 2020 16:02:20.198:WARN [karma]: No captured browser, open http://localhost:9876/
+28 11 2020 16:02:33.687:INFO [Chrome 86.0.4240 (Windows 10.0.0)]: Connected on socket bbEEJbITTBuMpCX8AAAA with id 68503604
+Chrome 86.0.4240 (Windows 10.0.0): Executed 10 of 13 SUCCESS (0 secs / 1.799 secs)
+LOG: Object{username: '', password: ''}
+Chrome 86.0.4240 (Windows 10.0.0): Executed 10 of 13 SUCCESS (0 secs / 1.799 secs)
+Chrome 86.0.4240 (Windows 10.0.0): Executed 11 of 13 SUCCESS (0 secs / 2.269 secs)
+LOG: 'Invalid credentials'
+Chrome 86.0.4240 (Windows 10.0.0): Executed 11 of 13 SUCCESS (0 secs / 2.269 secs)
+Chrome 86.0.4240 (Windows 10.0.0): Executed 12 of 13 SUCCESS (0 secs / 2.698 secs)
+LOG: '404 error'
+Chrome 86.0.4240 (Windows 10.0.0): Executed 12 of 13 SUCCESS (0 secs / 2.698 secs)
+Chrome 86.0.4240 (Windows 10.0.0): Executed 13 of 13 SUCCESS (3.21 secs / 3.259 secs)
+Terminate batch job (Y/N)? n
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git init
+Reinitialized existing Git repository in C:/Users/charan/Desktop/Angular/angular-keep-level-2-assignment/.git/
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git remote add origin https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-2-assignment.git
+fatal: remote origin already exists.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git commit -m "initial"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/app/app.component.css
+        modified:   src/app/app.component.html
+        modified:   src/app/app.component.ts
+        modified:   src/app/app.module.ts
+        modified:   src/app/can-activate-route.guard.ts
+        modified:   src/app/dashboard/dashboard.component.css
+        modified:   src/app/dashboard/dashboard.component.html
+        modified:   src/app/dashboard/dashboard.component.ts
+        modified:   src/app/header/header.component.html
+        modified:   src/app/login/login.component.css
+        modified:   src/app/login/login.component.html
+        modified:   src/app/login/login.component.ts
+        modified:   src/app/note.ts
+        modified:   src/app/services/authentication.service.ts
+        modified:   src/app/services/notes.service.ts
+        modified:   src/app/services/router.service.ts
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        package-lock.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git add .
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   package-lock.json
+        modified:   src/app/app.component.css
+        modified:   src/app/app.component.html
+        modified:   src/app/app.component.ts
+        modified:   src/app/app.module.ts
+        modified:   src/app/can-activate-route.guard.ts
+        modified:   src/app/dashboard/dashboard.component.css
+        modified:   src/app/dashboard/dashboard.component.html
+        modified:   src/app/dashboard/dashboard.component.ts
+        modified:   src/app/header/header.component.html
+        modified:   src/app/login/login.component.css
+        modified:   src/app/login/login.component.html
+        modified:   src/app/login/login.component.ts
+        modified:   src/app/note.ts
+        modified:   src/app/services/authentication.service.ts
+        modified:   src/app/services/notes.service.ts
+        modified:   src/app/services/router.service.ts
+
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git commit -m "initial"
+[master 98e7388] initial
+ 17 files changed, 15662 insertions(+), 36 deletions(-)
+ create mode 100644 package-lock.json
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>git push -u origin master
+Enumerating objects: 42, done.
+Counting objects: 100% (42/42), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (25/25), 119.27 KiB | 6.28 MiB/s, done.
+Total 25 (delta 5), reused 0 (delta 0), pack-reused 0
+To https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-2-assignment.git
+   6bca12a..98e7388  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-2-assignment>
+--------------------------------------------------------------------------
+keepnote 3
+Microsoft Windows [Version 10.0.19041.630]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\charan\Desktop\Angular>git clone https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-3-assignment.git
+Cloning into 'angular-keep-level-3-assignment'...
+remote: Enumerating objects: 108, done.
+Rremote: Total 108 (delta 0), reused 0 (delta 0), pack-reused 108
+Receiving objects: 100% (108/108), 33.85 KiB | 1.78 MiB/s, done.
+Resolving deltas: 100% (22/22), done.
+
+C:\Users\charan\Desktop\Angular>cd angular-keep-level-3-assignment
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>code .
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>npm install
+npm WARN deprecated @angular/http@5.2.11: Package no longer supported. Use @angular/common instead, see https://angular.io/guide/deprecations#angularhttp
+npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated extract-text-webpack-plugin@3.0.2: Deprecated. Please use https://github.com/webpack-contrib/mini-css-extract-plugin
+npm WARN deprecated chokidar@1.7.0: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+npm WARN deprecated request@2.81.0: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated har-validator@4.2.1: this library is no longer supported
+npm WARN deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+npm WARN deprecated json3@3.3.2: Please use the native JSON object instead of JSON 3
+npm WARN deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+
+> node-sass@4.14.1 install C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\charan\AppData\Roaming\npm-cache\node-sass\4.14.1\win32-x64-72_binding.node
+
+> core-js@2.6.12 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+> https://opencollective.com/core-js
+> https://www.patreon.com/zloirock
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> ejs@2.7.4 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment\node_modules\ejs
+> node ./postinstall.js
+
+Thank you for installing EJS: built with the Jake JavaScript build tool (https://jakejs.com/)
+
+
+> uglifyjs-webpack-plugin@0.4.6 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment\node_modules\webpack\node_modules\uglifyjs-webpack-plugin
+> node lib/post_install.js
+
+
+> node-sass@4.14.1 postinstall C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment\node_modules\node-sass\vendor\win32-x64-72\binding.node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN notsup Unsupported engine for karma@1.7.1: wanted: {"node":"0.10 || 0.12 || 4 || 5 || 6 || 7 || 8"} (current: {"node":"12.18.4","npm":"6.14.6"})
+npm WARN notsup Not compatible with your version of node/npm: karma@1.7.1
+npm WARN notsup Unsupported engine for karma-cli@1.0.1: wanted: {"node":"0.10 || 0.12 || 4 || 5 || 6"} (current: {"node":"12.18.4","npm":"6.14.6"})
+npm WARN notsup Not compatible with your version of node/npm: karma-cli@1.0.1
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules\watchpack-chokidar2\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\webpack-dev-server\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\@angular\compiler-cli\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\karma\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN @schematics/angular@0.1.17 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular-devkit/schematics@0.0.52 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+
+added 1734 packages from 1238 contributors and audited 1740 packages in 95.56s
+
+35 packages are looking for funding
+  run `npm fund` for details
+
+found 43 vulnerabilities (22 low, 9 moderate, 12 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>npm install @angular/material @angular/cdk @angular/animations --save
+npm WARN @angular-devkit/schematics@0.0.52 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+npm WARN @schematics/angular@0.1.17 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\@angular\compiler-cli\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\karma\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\watchpack-chokidar2\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\webpack-dev-server\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ @angular/cdk@5.2.5
++ @angular/material@5.2.5
++ @angular/animations@5.2.11
+updated 3 packages and audited 1740 packages in 22.219s
+
+35 packages are looking for funding
+  run `npm fund` for details
+
+found 43 vulnerabilities (22 low, 9 moderate, 12 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>ng serve -o
+Your global Angular CLI version (10.2.0) is greater than your local
+version (1.6.0). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+ 11% building modules 10/11 modules 1 active ...ode_modules\style-loader\addStyles.jswebpack: wait until bundle finished: /
+Date: 2020-11-29T10:42:34.761Z
+Hash: e4e9ab3e26e185ccd8e9
+Time: 14519ms
+chunk {inline} inline.bundle.js (inline) 5.79 kB [entry] [rendered]
+chunk {main} main.bundle.js (main) 155 kB [initial] [rendered]
+chunk {polyfills} polyfills.bundle.js (polyfills) 608 kB [initial] [rendered]
+chunk {styles} styles.bundle.js (styles) 150 kB [initial] [rendered]
+chunk {vendor} vendor.bundle.js (vendor) 12.5 MB [initial] [rendered]
+
+webpack: Compiled successfully.
+^CTerminate batch job (Y/N)? n
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>ng test
+Your global Angular CLI version (10.2.0) is greater than your local
+version (1.6.0). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+ 10% building modules 1/1 modules 0 active29 11 2020 16:15:32.229:WARN [karma]: No captured browser, open http://localhost:9876/
+29 11 2020 16:15:32.253:INFO [karma]: Karma v1.7.1 server started at http://0.0.0.0:9876/
+29 11 2020 16:15:32.253:INFO [launcher]: Launching browser Chrome with unlimited concurrency
+29 11 2020 16:15:32.269:INFO [launcher]: Starting browser Chrome
+29 11 2020 16:15:46.750:WARN [karma]: No captured browser, open http://localhost:9876/
+29 11 2020 16:15:54.366:INFO [Chrome 86.0.4240 (Windows 10.0.0)]: Connected on socket gfbwYOanrpH3z4L6AAAA with id 26196407
+Chrome 86.0.4240 (Windows 10.0.0): Executed 29 of 29 SUCCESS (10.739 secs / 10.683 secs)
+29 11 2020 16:16:27.366:WARN [Chrome 86.0.4240 (Windows 10.0.0)]: Disconnected (1 times)
+Chrome 86.0.4240 (Windows 10.0.0) ERROR
+Chrome 86.0.4240 (Windows 10.0.0) ERROR
+  Disconnectedundefined
+Chrome 86.0.4240 (Windows 10.0.0): Executed 29 of 29 SUCCESS (10.739 secs / 10.683 secs)
+Chrome 86.0.4240 (Windows 10.0.0) ERROR
+  Disconnectedundefined
+29 11 2020 16:16:27.574:ERROR [launcher]: Chrome crashed.
+
+29 11 2020 16:16:27.574:ERROR [launcher]: Chrome stdout:
+29 11 2020 16:16:27.582:ERROR [launcher]: Chrome stderr:
+29 11 2020 16:16:27.728:INFO [launcher]: Trying to start Chrome again (1/2).
+29 11 2020 16:16:30.631:ERROR [launcher]: Cannot start Chrome
+
+29 11 2020 16:16:30.639:ERROR [launcher]: Chrome stdout:
+29 11 2020 16:16:30.639:ERROR [launcher]: Chrome stderr:
+29 11 2020 16:16:30.727:INFO [launcher]: Trying to start Chrome again (2/2).
+Terminate batch job (Y/N)?
+^C
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>y
+'y' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git init
+Reinitialized existing Git repository in C:/Users/charan/Desktop/Angular/angular-keep-level-3-assignment/.git/
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git remote add origin https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-3-assignment.git
+fatal: remote origin already exists.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git add .
+warning: LF will be replaced by CRLF in server/db.json.
+The file will have its original line endings in your working directory
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   package-lock.json
+        modified:   package.json
+        modified:   server/db.json
+        modified:   src/app/app.module.ts
+        modified:   src/app/can-activate-route.guard.ts
+        modified:   src/app/dashboard/dashboard.component.ts
+        modified:   src/app/edit-note-opener/edit-note-opener.component.ts
+        modified:   src/app/edit-note-view/edit-note-view.component.css
+        modified:   src/app/edit-note-view/edit-note-view.component.html
+        modified:   src/app/edit-note-view/edit-note-view.component.ts
+        modified:   src/app/header/header.component.html
+        modified:   src/app/header/header.component.ts
+        modified:   src/app/list-view/list-view.component.css
+        modified:   src/app/list-view/list-view.component.html
+        modified:   src/app/list-view/list-view.component.ts
+        modified:   src/app/login/login.component.css
+        modified:   src/app/login/login.component.html
+        modified:   src/app/login/login.component.ts
+        modified:   src/app/note-taker/note-taker.component.css
+        modified:   src/app/note-taker/note-taker.component.html
+        modified:   src/app/note-taker/note-taker.component.ts
+        modified:   src/app/note-view/note-view.component.css
+        modified:   src/app/note-view/note-view.component.html
+        modified:   src/app/note-view/note-view.component.ts
+        modified:   src/app/note/note.component.css
+        modified:   src/app/note/note.component.html
+        modified:   src/app/note/note.component.ts
+        modified:   src/app/services/authentication.service.ts
+        modified:   src/app/services/notes.service.ts
+        modified:   src/app/services/router.service.ts
+
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git commit -m "initial commit"
+[master 5a08a1d] initial commit
+ 30 files changed, 16074 insertions(+), 102 deletions(-)
+ create mode 100644 package-lock.json
+ rewrite src/app/app.module.ts (67%)
+ rewrite src/app/edit-note-view/edit-note-view.component.html (100%)
+ rewrite src/app/list-view/list-view.component.html (100%)
+ rewrite src/app/note-taker/note-taker.component.html (61%)
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git push -u origin master
+Enumerating objects: 74, done.
+Counting objects: 100% (73/73), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (45/45), done.
+Writing objects: 100% (45/45), 124.99 KiB | 2.55 MiB/s, done.
+Total 45 (delta 13), reused 0 (delta 0), pack-reused 0
+To https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-3-assignment.git
+   7c211da..5a08a1d  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   server/db.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git add .
+warning: LF will be replaced by CRLF in server/db.json.
+The file will have its original line endings in your working directory
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   server/db.json
+
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git commit -m "second"
+[master b5cd786] second
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>git push -u origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 373 bytes | 373.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+To https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-3-assignment.git
+   5a08a1d..b5cd786  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>
+
+C:\Users\charan\Desktop\Angular\angular-keep-level-3-assignment>
+-------------------------------------------------------------------------
+rdbms
+
+Microsoft Windows [Version 10.0.19041.630]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\charan\Downloads>git clone https://gitlab-legato.stackroute.in/shravika413/keepnote-rdbms-assignment-boilerplate_v2.git
+Cloning into 'keepnote-rdbms-assignment-boilerplate_v2'...
+remote: Enumerating objects: 54, done.
+remote: Total 54 (delta 0), reused 0 (delta 0), pack-reused 54
+Unpacking objects: 100% (54/54), 26.19 KiB | 72.00 KiB/s, done.
+
+C:\Users\charan\Downloads>cd keepnote-rdbms-assignment-boilerplate_v2
+
+C:\Users\charan\Downloads\keepnote-rdbms-assignment-boilerplate_v2>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   keep-note.sql
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\charan\Downloads\keepnote-rdbms-assignment-boilerplate_v2>git add .
+warning: LF will be replaced by CRLF in keep-note.sql.
+The file will have its original line endings in your working directory
+
+C:\Users\charan\Downloads\keepnote-rdbms-assignment-boilerplate_v2>git commit -m "queries"
+[master 4aa1d93] queries
+ 1 file changed, 121 insertions(+)
+
+C:\Users\charan\Downloads\keepnote-rdbms-assignment-boilerplate_v2>git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.13 KiB | 580.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+To https://gitlab-legato.stackroute.in/shravika413/keepnote-rdbms-assignment-boilerplate_v2.git
+   00d44d0..4aa1d93  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\charan\Downloads\keepnote-rdbms-assignment-boilerplate_v2>
+
+----------------------------------------------------------------
+/* .content {
+padding:16px;
+display: flex;
+    flex-wrap: wrap; 
+}
+
+
+.content > mat-card {
+  margin-bottom: 16px;
+  
+    width: 30%;
+    margin: 0.2rem;
+    height: 4%;
+    overflow: hidden;
+    float: left; 
+}*/
+/*  */
+.container{
+    display: flex;
+    flex-wrap: wrap; 
+}
+.container>div{
+    width: 30%;
+    margin: 0.2rem;
+    height: 4%;
+    overflow: hidden;
+    float: left;
+    margin:0%;
+    padding:0%;
+ } 
+
+ .mat-card-title {
+   /* font-family: 'Impact, Charcoal, sans-serif' ; */
+    font-style: normal; 
+   font-size: 25px;
+   font-family: 'sans-serif';
+} 
+
+
+ .fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+     color: white;
+  }
+  
+  .fa-twitter {
+   color: white;
+  }
+  
+  .fa-instagram {
+     color: white;
+  }
+  
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(53, 54, 54);
+    color: white;
+    text-align: center;
+ }
+  
+ .navbar-brand img{
+    height: 30px !important;
+   
+}
+
+.footer{
+    left: 0; bottom: 0; 
+    width: 100%; 
+     background-color:rgb(53, 54, 54);
+      color:rgb(0, 0, 0); text-align: center; height:60px;
+      position: fixed
+  }
+  .menu-spacer {
+    flex: 1 1 auto;
+  }
+  .fa{
+    padding: 0.5em;
+  }
+  .copyright
+  {
+    padding-bottom: 0%
+  }
+  .herounit-mask
+  {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-decoration-style: none;
+  }
+  a{
+    text-decoration:none;
+    color: white;
+  }
+  i{
+    display: flex;
+    background: #e7e0ea;
+    height: 33px;
+    width: 33px;
+    margin: 0 10px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0%;
+    text-decoration: none;
+    box-shadow: 6px 6px 10 px -1px rgba(0,0,0,0.15),
+    -6px -6px 10px -1px rgba(255,255,255,0.7);
+    font-size: 20px;
+    color: #777;
+    transition: transform 0.5s;
+  }
+  i:hover{
+    box-shadow:inset 4px 4px 6 px -1px rgba(0,0,0,0.2),
+    inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+    -0.5px -0.5px 0px rgba(255,255,255,1),
+    0.5px 0.5px 0px rgba(0,0,0,0.15),
+    0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(2px);
+  }
+  a:hover{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover .fa-facebook
+  {
+   
+    color: #3b5998;
+  }
+  a:hover .fa-twitter
+  {
+    color: #00acee;
+  }
+  a:hover .fa-youtube
+  {
+    color: #f00;
+  }
+  a:hover .fa-skype
+  {
+    color: #00acee;
+  }
+  a:hover .fa-linkedin
+  {
+    color: #0e76a8;
+  }
+  #homepage{
+    color: rgb(13, 14, 13)
+  }
+  #homepage:hover{
+    color: red
+  } 
+
+  h3{
+    text-align: center;color:grey
+}
+h1{
+    margin-top: 0%;
+    padding-top: 0.5em;
+}
+.gif-thumbnail{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px ;
+    /*  #166ae9 */
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    width:250px; 
+    height: 420px;
+    margin:15px;
+    /* background-color: rgb(79, 139, 194); */
+    /* background: linear-gradient(rgba(170, 156, 156, 0.6),rgb(158, 80, 17)); */
+    position: relative;
+}
+.gif-thumbnail:hover{
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    /* box-shadow: 5px 5px 10px rgb(255, 0, 0);     */
+}
+h4{
+    margin: 0px
+}
+.gif-image{
+    height: 300px;
+    width: 250px; 
+    /* border-radius: 60%; */
+}
+/* .gif-actions{
+    text-align: right;
+    float: left;
+} */
+.gif-container{
+    margin:auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height:100vh;
+    margin-left: 8%;
+}
+trending.css
+----------------------------------------------------------
+trending.html
+ <!-- <div class ="container">
+       <div *ngFor = "let item of gifs.data  | paginate: { id: 'listing_pagination',
+      itemsPerPage: 6,
+      currentPage: page,
+      totalItems: totalRecords }">
+      <div class="card" style="width: 20rem;">
+       
+        <img  height="300px"  src="{{item.images.original.url}}" class="card-img-top" alt="...">
+        <mat-card-header>
+          <mat-card-title id="book-title">
+            <h4>{{item.title}}</h4>
+          </mat-card-title>
+          <mat-card-subtitle>id: {{item.id}}</mat-card-subtitle>
+        </mat-card-header>
+           <mat-card-actions style="float:left;">
+            <button  class="btn btn-primary" style="margin-left: 10px" mat-button (click) = recommendGifs(item)>Recommend</button>
+            <button class="btn btn-primary" style="margin-left: 10px" mat-button (click) = favoriteGifs(item)>Favorite </button>
+            <button class="btn" (click) = downloadGif(item.images.original.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>
+        </mat-card-actions>
+      
+       </div>
+      </div> 
+  </div>
+  <br/>
+  <div>
+    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div>  -->
+    <!--  -->
+      <!-- <div class="footer">
+        
+        <h4>Contact  Us</h4>
+      <a style="padding-left:25px;" href="#" class="fa fa-facebook"></a>
+    <a  href="#" class="fa fa-instagram"></a>
+    <a  href="#" class="fa fa-twitter"></a>
+      </div>  -->
+       <!-- <div class="footer">
+        <div class="copyright">Contact Us</div>
+        <section class="herounit-mask">
+          <a href="https://www.facebook.com/">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com/">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/">
+            <i class="fa fa-youtube"></i>
+          </a>
+          <a href="https://www.skype.com/">
+            <i class="fa fa-skype"></i>
+          </a>
+          <a href="https://www.linkedin.com/">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </section>
+      </div> -->
+      
+      
+    
+      <!-- <div class ="container">
+        <div *ngFor = "let item of stickers.data  | paginate: { id: 'listing_pagination',
+        itemsPerPage: 3,
+        currentPage: page,
+        totalItems: totalRecords }">
+        <div class="card" style="width: 16rem;">
+          <img  height="250px" src="{{item.images.original.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+              <a [routerLink] = ""   style="margin-right: 16px" class="btn btn-primary">Recommend</a>
+              <a [routerLink] = ""    class="btn btn-primary">Favorite </a>
+          </div> 
+        
+         </div>
+        </div> 
+      </div>
+      -->
+        <!-- <div>
+         <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+        </div>   -->
+
+----------------------------------------------------

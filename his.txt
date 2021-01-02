@@ -1,0 +1,376 @@
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular
+$ git clone -b sprint-blue --single-branch https://gitlab-legato.stackroute.in/shravika413/gipherapp.git
+Cloning into 'gipherapp'...
+remote: Enumerating objects: 109, done.
+remote: Counting objects: 100% (109/109), done.
+remote: Compressing objects: 100% (80/80), done.
+remote: Total 109 (delta 31), reused 90 (delta 18), pack-reused 0
+Receiving objects: 100% (109/109), 207.56 KiB | 2.53 MiB/s, done.
+Resolving deltas: 100% (31/31), done.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular
+$ cd gipherapp
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git history
+git: 'history' is not a git command. See 'git --help'.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ history
+    1  git --version
+    2  touch test
+    3  git add .
+    4  git commit -m "my first"
+    5  git push -u origin master
+    6  git remote -v
+    7  git remote add origin https://gitlab-legato.stackroute.in/shravika413/my-first-project.git
+    8  git push -u origin master
+    9  git pull
+   10  git push -u origin master
+   11  git status
+   12  git remote -v
+   13  git add .
+   14  git commit -m "my first commit"
+   15  git push -u origin master
+   16  git status
+   17  git remote -v
+   18  git remote add origin https://gitlab-legato.stackroute.in/shravika413/bootstrap-project.git
+   19  git remote -v
+   20  git push -u origin master
+   21  git push -u origin --all
+   22  git --v
+   23  git --version
+   24  git pull
+   25  git pull origin master
+   26  git clone https://gitlab-legato.stackroute.in/shravika413/bootstrap-project.git
+   27  git status
+   28  git add .
+   29  git commit -m "first commit"
+   30  git push -u origin master
+   31  git -T git@gitlab.com
+   32  ssh -T git@gitlab.com
+   33  ssh -T git@gitlab.com
+   34  git remote -v
+   35  git status
+   36  git add .
+   37  git commit -m "first commit"
+   38  git push -u origin master
+   39  cat index.html
+   40  git clone https://gitlab-legato.stackroute.in/shravika413/third-project.git
+   41  git remote -v
+   42  git push -u origin master
+   43  git pull --rebase origin master
+   44  git  config --list
+   45  ssh-keygen
+   46  git push -u origin master
+   47  git remote -v
+   48  git status
+   49  git add .
+   50  git commit -m "ji"
+   51  git push -u origin master
+   52  git clone https://gitlab-legato.stackroute.in/shravika413/test.git
+   53  ls
+   54  git init
+   55  git add .
+   56  git add .
+   57  git status
+   58  git
+   59  git remote add origin https://gitlab-legato.stackroute.in/shravika413/my-first-project.git
+   60  git push -u origin master
+   61  cd C:\Users\charan\Desktop\solutions
+   62  ls
+   63  git init
+   64  git remote add origin https://gitlab-legato.stackroute.in/stack_js/javascript-basics-assignment.git
+   65  git remote -v
+   66  git add .
+   67  git commit -m "fc"
+   68  git push origin master
+   69  git push -u origin master
+   70  cd desktop
+   71  cd angular
+   72  git init
+   73  git remote add origin https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-1-assignment.git
+   74  git add .
+   75  git commit -m "initial"
+   76  git push -u origin master
+   77  git push -u origin master
+   78  git push -u origin master
+   79  git push -u origin master
+   80  git remote add origin https://gitlab-legato.stackroute.in/shravika413/angular-keep-level-1-assignment.git
+   81  git commit -m "initial commit"
+   82  git push -u origin master
+   83  git clone https://gitlab-legato.stackroute.in/shravika413/test.git
+   84  cd test
+   85  touch readme.md
+   86  git add readme.md
+   87  git commit -m "add readme"
+   88  git checkout stage
+   89  git branch stage
+   90  git checkout stage
+   91  git branch login
+   92  git checkout login
+   93  touch readme.md
+   94  git commit -m "add readme"
+   95  git push -u origin login
+   96  git branch
+   97  cd ..
+   98  git clone -b sprint-blue --single-branch https://gitlab-legato.stackroute.in/shravika413/gipherapp.git
+   99  cd ..
+  100  git branch
+  101  ls
+  102  git status
+  103  git status
+  104  git add .
+  105  git commit -m "first commit"
+  106  git push -u origin sprint-blue
+  107  git log
+  108  git status
+  109  git log
+  110  git add .
+  111  git commit -m "third commit"
+  112  git push -u origin sprint-blue
+  113  git status
+  114  git add .
+  115  git commit -m "added dashboard component"
+  116  git push -u origin sprint-blue
+  117  git log
+  118  gits status
+  119  git status
+  120  git add .
+  121  git commit -m "added dashboard component"
+  122  git push -u origin sprint-blue
+  123  git log
+  124  git log --oneline
+  125  cd ..
+  126  ls
+  127  cd gipher-client/
+  128  cd ..
+  129  git branch
+  130  git branch -all
+  131  git branch -a
+  132  git diff sprint-blue sahitha
+  133  git checkout sahitha
+  134  git branch
+  135  git branch --all
+  136  git branch -r
+  137  git show-branch
+  138  git branch -a
+  139  git config remote.origin.fetch
+  140  git config remote.origin.fetch
+  141  "+refs/heads/:refs/remotes/origin/"
+  142  git config remote.origin.fetch
+  143  "+refs/heads/:refs/remotes/origin/"
+  144  git remote update
+  145  git remote -r
+  146  git branch -r
+  147  git config remote.origin.fetch "+refs/heads/:refs/remotes/origin/"
+  148  git remote update
+  149  git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+  150  git remote update
+  151  git remote -r
+  152  git branch r
+  153  git branch -r
+  154  git diff sprint-blue sahitha
+  155  git checkout -t origin/sahitha
+  156  git branch
+  157  ls
+  158  git diff sprint-blue sahitha
+  159  git checkout sprint-blue
+  160  git branch
+  161  git merge sahitha
+  162  code .
+  163  git checkout sahitha
+  164  git merge sahitha
+  165  git status
+  166  git merge --abort
+  167  git checkout sahitha
+  168  git pull origin sahitha
+  169  git pull origin sprint-blue
+  170  git status
+  171  git log
+  172  git status
+  173  git merge --abort
+  174  cd ..
+  175  cd..
+  176  git clone -b sprint-blue --single-branch https://gitlab-legato.stackroute.in/shravika413/gipherapp.git
+  177  cd gipherapp
+  178  git history
+  179  history
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ ^C
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$  git config remote.origin.fetch
++refs/heads/sprint-blue:refs/remotes/origin/sprint-blue
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ ^C
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git remote update
+Fetching origin
+remote: Enumerating objects: 116, done.
+remote: Counting objects: 100% (108/108), done.
+remote: Compressing objects: 100% (69/69), done.
+remote: Total 82 (delta 38), reused 37 (delta 11), pack-reused 0
+Unpacking objects: 100% (82/82), 47.78 KiB | 105.00 KiB/s, done.
+From https://gitlab-legato.stackroute.in/shravika413/gipherapp
+ * [new branch]      Rishi      -> origin/Rishi
+ * [new branch]      Search     -> origin/Search
+ * [new branch]      dev        -> origin/dev
+ * [new branch]      master     -> origin/master
+ * [new branch]      pavan      -> origin/pavan
+ * [new branch]      sahitha    -> origin/sahitha
+ * [new branch]      stage      -> origin/stage
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git merge origin/sahitha
+Auto-merging gipher-client/src/index.html
+CONFLICT (content): Merge conflict in gipher-client/src/index.html
+CONFLICT (modify/delete): gipher-client/src/app/gipher.service.ts deleted in origin/sahitha and modified in HEAD. Version HEAD of gipher-client/src/app/gipher.service.ts left in tree.
+Removing gipher-client/src/app/gipher.service.spec.ts
+Auto-merging gipher-client/src/app/app.module.ts
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.module.ts
+Auto-merging gipher-client/src/app/app.component.ts
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.component.ts
+Auto-merging gipher-client/src/app/app.component.html
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.component.html
+Auto-merging gipher-client/src/app/app.component.css
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.component.css
+Automatic merge failed; fix conflicts and then commit the result.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue|MERGING)
+$ git status
+On branch sprint-blue
+Your branch is up to date with 'origin/sprint-blue'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   gipher-client/angular.json
+        modified:   gipher-client/package-lock.json
+        modified:   gipher-client/package.json
+        new file:   gipher-client/src/app/app-routing.module.ts
+        deleted:    gipher-client/src/app/gipher.service.spec.ts
+        new file:   gipher-client/src/app/login/login.component.css
+        new file:   gipher-client/src/app/login/login.component.html
+        new file:   gipher-client/src/app/login/login.component.spec.ts
+        new file:   gipher-client/src/app/login/login.component.ts
+        new file:   gipher-client/src/assets/blue.jpeg
+        modified:   gipher-client/src/styles.css
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+        both modified:   gipher-client/src/app/app.component.css
+        both modified:   gipher-client/src/app/app.component.html
+        both modified:   gipher-client/src/app/app.component.ts
+        both modified:   gipher-client/src/app/app.module.ts
+        deleted by them: gipher-client/src/app/gipher.service.ts
+        both modified:   gipher-client/src/index.html
+
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue|MERGING)
+$ git merge --abort
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git status
+On branch sprint-blue
+Your branch is up to date with 'origin/sprint-blue'.
+
+nothing to commit, working tree clean
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git status
+On branch sprint-blue
+Your branch is up to date with 'origin/sprint-blue'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   gipher-client/package-lock.json
+        modified:   gipher-client/package.json
+        modified:   gipher-client/src/app/app.module.ts
+        modified:   gipher-client/src/app/dashboard/dashboard.component.css
+        modified:   gipher-client/src/app/dashboard/dashboard.component.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git status
+On branch sprint-blue
+Your branch is up to date with 'origin/sprint-blue'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   gipher-client/package-lock.json
+        modified:   gipher-client/package.json
+        modified:   gipher-client/src/app/app.module.ts
+        modified:   gipher-client/src/app/dashboard/dashboard.component.html
+        modified:   gipher-client/src/app/gipher.service.ts
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git add .
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git commit -m "fourth commit"
+[sprint-blue 685d784] fourth commit
+ 5 files changed, 109 insertions(+), 133 deletions(-)
+ rewrite gipher-client/src/app/dashboard/dashboard.component.html (65%)
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git push -u origin sprint-blue
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 2.42 KiB | 309.00 KiB/s, done.
+Total 11 (delta 10), reused 0 (delta 0), pack-reused 0
+remote:
+remote: To create a merge request for sprint-blue, visit:
+remote:   https://gitlab-legato.stackroute.in/shravika413/gipherapp/-/merge_requests/new?merge_request%5Bsource_branch%5D=sprint-blue
+remote:
+To https://gitlab-legato.stackroute.in/shravika413/gipherapp.git
+   41f852c..685d784  sprint-blue -> sprint-blue
+Branch 'sprint-blue' set up to track remote branch 'sprint-blue' from 'origin'.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git branch -a
+* sprint-blue
+  remotes/origin/Rishi
+  remotes/origin/Search
+  remotes/origin/dev
+  remotes/origin/master
+  remotes/origin/pavan
+  remotes/origin/sahitha
+  remotes/origin/sprint-blue
+  remotes/origin/stage
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue)
+$ git merge origin/sahitha
+Auto-merging gipher-client/src/index.html
+CONFLICT (content): Merge conflict in gipher-client/src/index.html
+CONFLICT (modify/delete): gipher-client/src/app/gipher.service.ts deleted in origin/sahitha and modified in HEAD. Version HEAD of gipher-client/src/app/gipher.service.ts left in tree.
+Removing gipher-client/src/app/gipher.service.spec.ts
+Auto-merging gipher-client/src/app/app.module.ts
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.module.ts
+Auto-merging gipher-client/src/app/app.component.ts
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.component.ts
+Auto-merging gipher-client/src/app/app.component.html
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.component.html
+Auto-merging gipher-client/src/app/app.component.css
+CONFLICT (content): Merge conflict in gipher-client/src/app/app.component.css
+Auto-merging gipher-client/package.json
+Auto-merging gipher-client/package-lock.json
+Automatic merge failed; fix conflicts and then commit the result.
+
+charan@DESKTOP-BQ7QP4G MINGW64 ~/Desktop/Angular/gipherapp (sprint-blue|MERGING)
+$
